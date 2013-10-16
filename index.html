@@ -149,7 +149,11 @@ function cliffs() {
     change_buttons({'I believe I can fly!': fly, "Carefully climb down the cliffs": not_done, "Go back": island_center});
 }
 
-
+function cave()  {
+	change_image('http://top.freewallpaper-s.net/rwx/dark_gothic_wallpapers__34__thumb.jpg');
+	change_text('You See glowing eyes in the dark.  Is this awesome?')
+	change_buttons({'Yes': yes, 'No': no});
+}
 
 function fly() {
     if (has_wings) { /* if the player has wings...  */
@@ -223,7 +227,7 @@ function hole() {
 function enter() {
     if (person_height < 3) {
         change_text('With your shrunken height, you squeeze into the cave...');
-        change_buttons({"Continue...": not_done});
+        change_buttons({"Continue...": cave});
     } else {
        change_text('OUCH!!! You banged your head on the ceiling.  You are too big to enter the hole!   In fact, you are ' + person_height + ' feet tall.  I wonder if there is a way to get shorter....');
     }
